@@ -1,6 +1,6 @@
 # Harvare backend
 
-This is a basic hardvare backend based on the task
+This is a basic hardvare backend based on the assigned task.
 
 ## Dependencies
 
