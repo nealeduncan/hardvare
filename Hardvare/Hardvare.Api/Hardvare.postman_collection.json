@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "750a604d-dce5-4b00-ba49-3c0ce5ec6f93",
+		"name": "Hardvare",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"3243712F-88A8-41DF-9BF9-3FE1C9B68807\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44348/api/carts",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44348",
+					"path": [
+						"api",
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"a876074a-72bf-4eed-968c-0f5a1e03c3fa\",\r\n  \"name\": \"Product B\",\r\n  \"description\": \"Some description blah\",\r\n  \"price\": 451.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44348/api/products/6074a4d6-c4ae-4600-b8e8-3b1e4fe19ff9",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44348",
+					"path": [
+						"api",
+						"products",
+						"6074a4d6-c4ae-4600-b8e8-3b1e4fe19ff9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add product as admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"a876074a-72bf-4eed-968c-0f5a1e03c3fa\",\r\n  \"name\": \"Product X\",\r\n  \"description\": \"Some \",\r\n  \"price\": 45.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44348/api/products",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44348",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add product as customer (unauthorised)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"3243712F-88A8-41DF-9BF9-3FE1C9B68807\",\r\n  \"name\": \"Product X\",\r\n  \"description\": \"Some \",\r\n  \"price\": 45.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44348/api/products",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44348",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add item to cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": \"D29FA6BC-E982-4CBC-96F1-96E92E3B9556\",\r\n  \"quantity\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44348/api/carts/8469befc-5417-4ef9-af24-b2e3f5698852",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44348",
+					"path": [
+						"api",
+						"carts",
+						"8469befc-5417-4ef9-af24-b2e3f5698852"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search products ?p=1&searchTerm=X",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44348/api/products?p=1&searchTerm=X",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44348",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "p",
+							"value": "1"
+						},
+						{
+							"key": "searchTerm",
+							"value": "X"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44348/api/products",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44348",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44348/api/users",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44348",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get specific user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44348/api/users/a876074a-72bf-4eed-968c-0f5a1e03c3fa",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44348",
+					"path": [
+						"api",
+						"users",
+						"a876074a-72bf-4eed-968c-0f5a1e03c3fa"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

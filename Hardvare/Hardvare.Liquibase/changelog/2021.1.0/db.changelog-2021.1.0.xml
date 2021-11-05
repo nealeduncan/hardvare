@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+  xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext 
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd 
+    http://www.liquibase.org/xml/ns/dbchangelog 
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+  <changeSet author="neale.duncan" id="1">
+    <createTable tableName="User">
+      <column computed="false" name="Id" type="uuid">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user_id"/>
+      </column>
+      <column computed="false" name="FirstName" type="varchar(50)">
+        <constraints nullable="false" />
+      </column>
+      <column computed="false" name="LastName" type="varchar(50)">
+        <constraints nullable="false" />
+      </column>
+      <column computed="false" name="PhoneNumber" type="varchar(50)">
+        <constraints nullable="false" />
+      </column>
+      <column computed="false" name="Role" type="varchar(50)">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+
+    <createTable tableName="Product">
+      <column computed="false" name="Id" type="uuid">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_product_id"/>
+      </column>
+      <column computed="false" name="Name" type="varchar(50)">
+        <constraints nullable="false" />
+      </column>
+      <column computed="false" name="Description" type="varchar(200)">
+        <constraints nullable="false" />
+      </column>
+      <column computed="false" name="Price" type="decimal(18,2)">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+
+    <createTable tableName="Cart">
+      <column computed="false" name="Id" type="uuid">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_cart_id"/>
+      </column>
+      <column computed="false" name="UserId" type="uuid">
+        <constraints nullable="false"  foreignKeyName="fk_cart_userid" referencedTableName="User" referencedColumnNames="Id"/>
+      </column>
+    </createTable>
+
+    <createTable tableName="CartItem">
+      <column computed="false" name="Id" type="uuid">
+        <constraints nullable="false" primaryKey="true" primaryKeyName="pk_cartitem_id"/>
+      </column>
+      <column computed="false" name="CartId" type="uuid">
+        <constraints nullable="false"  foreignKeyName="fk_cartitem_cartid" referencedTableName="Cart" referencedColumnNames="Id"/>
+      </column>
+      <column computed="false" name="ProductId" type="uuid">
+        <constraints nullable="false"  foreignKeyName="fk_cartitem_productid" referencedTableName="Product" referencedColumnNames="Id"/>
+      </column>
+      <column computed="false" name="Quantity" type="decimal(18,2)">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+
+  </changeSet>
+  
+</databaseChangeLog>

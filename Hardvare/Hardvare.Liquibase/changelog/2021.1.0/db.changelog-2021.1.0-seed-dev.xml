@@ -1,0 +1,84 @@
+<databaseChangeLog 
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" 
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext 
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd 
+    http://www.liquibase.org/xml/ns/dbchangelog 
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    
+    <changeSet author="neale.duncan" id="1">
+      <loadUpdateData 
+                encoding="UTF-8"  
+                file="data/User.csv"  
+                primaryKey="Id"
+                quotchar="'" 
+                relativeToChangelogFile="true" 
+                schemaName="dbo" 
+                separator="&#9;" 
+                tableName="User"> 
+      </loadUpdateData>        
+      <rollback>
+		    <sql>
+          DELETE FROM User
+        </sql>
+	    </rollback>
+    </changeSet>
+
+  <changeSet author="neale.duncan" id="2">
+    <loadUpdateData
+      encoding="UTF-8"
+      file="data/Product.csv"
+      primaryKey="Id"
+      quotchar="'"
+      relativeToChangelogFile="true"
+      schemaName="dbo"
+      separator="&#9;"
+      tableName="Product">
+    </loadUpdateData>
+    <rollback>
+      <sql>
+        DELETE FROM Product
+      </sql>
+    </rollback>
+  </changeSet>
+
+  <changeSet author="neale.duncan" id="3">
+    <loadUpdateData
+      encoding="UTF-8"
+      file="data/Cart.csv"
+      primaryKey="Id"
+      quotchar="'"
+      relativeToChangelogFile="true"
+      schemaName="dbo"
+      separator="&#9;"
+      tableName="Cart">
+    </loadUpdateData>
+    <rollback>
+      <sql>
+        DELETE FROM Cart
+      </sql>
+    </rollback>
+  </changeSet>
+
+  <changeSet author="neale.duncan" id="4">
+    <loadUpdateData
+      encoding="UTF-8"
+      file="data/CartItem.csv"
+      primaryKey="Id"
+      quotchar="'"
+      relativeToChangelogFile="true"
+      schemaName="dbo"
+      separator="&#9;"
+      tableName="CartItem">
+    </loadUpdateData>
+    <rollback>
+      <sql>
+        DELETE FROM CartItem
+      </sql>
+    </rollback>
+  </changeSet>
+
+</databaseChangeLog>
