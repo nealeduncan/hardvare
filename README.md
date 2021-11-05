@@ -4,7 +4,7 @@ This is a basic hardvare backend based on the assigned task.
 
 ## Dependencies
 
-Created using .Net Core and Liquibase. Requires Visual Studio.
+Created using .Net Core, SQL Server and Liquibase. Requires Visual Studio.
 
 ## Usage
 
