@@ -47,7 +47,7 @@ namespace Hardvare.Api.Repository
             await using var connection = new SqlConnection(this._connectionString);
             var cart = await connection.QuerySingleOrDefaultAsync<Cart>(sql, new { cartId });
 
-            var cartSql = @"SELECT * FROM [CartItem] WHERE CartId = @CartId";
+            var cartSql = @"SELECT * FROM [vw_GetCartItems] WHERE CartId = @CartId";
 
             var cartItems = await connection.QueryAsync<CartItem>(cartSql, new { cartId });
             cart.Items = cartItems.ToList();

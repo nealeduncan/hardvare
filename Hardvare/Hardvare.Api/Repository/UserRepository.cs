@@ -52,7 +52,7 @@ namespace Hardvare.Api.Repository
 
             foreach (var cart in carts)
             {
-                var cartItemSql = @"SELECT * FROM [CartItem] WHERE CartId = @CartId";
+                var cartItemSql = @"SELECT * FROM [vw_GetCartItems] WHERE CartId = @CartId";
 
                 var cartItems = await connection.QueryAsync<CartItem>(cartItemSql, new {CartId = cart.Id});
 

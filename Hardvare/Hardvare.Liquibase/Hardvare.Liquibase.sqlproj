@@ -61,6 +61,8 @@
     <Folder Include="changelog" />
     <Folder Include="changelog\2021.1.0" />
     <Folder Include="changelog\2021.1.0\data" />
+    <Folder Include="changelog\objects" />
+    <Folder Include="changelog\objects\view" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".drivers\mssql-jdbc-8.4.1.jre11.jar" />
@@ -76,5 +78,7 @@
     <None Include="changelog\2021.1.0\data\Cart.csv" />
     <None Include="changelog\2021.1.0\data\CartItem.csv" />
     <None Include="Hardvare.Liquibase.nuspec" />
+    <None Include="changelog\objects\view\vw_GetCartItems.sql" />
+    <None Include="changelog\objects\db.changelog-objects.xml" />
   </ItemGroup>
 </Project>
